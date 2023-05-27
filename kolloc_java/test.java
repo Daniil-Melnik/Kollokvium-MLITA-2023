@@ -1,14 +1,13 @@
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class test {
     private static final int timeoutTime = 1;
-
-    // private static void read(String filename) {
-    //     // Your code for reading the file goes here
-    // }
 
     private static void find(String fName) throws InterruptedException {
         File file = new File("C:/Users/danii/OneDrive/Рабочий стол/JavaVScode/kolloc/tests/"+fName);
@@ -103,7 +102,7 @@ public class test {
     }
 
     public static void main(String[] args) {
-        File folder = new File("C:/Users/danii/OneDrive/Рабочий стол/JavaVScode/kolloc/tests");
+        File folder = new File("C:/Users/danii/OneDrive/Рабочий стол/JavaVScode/kolloc_java/tests");
         File[] files = folder.listFiles();
 
         List<Double> times = new ArrayList<>();

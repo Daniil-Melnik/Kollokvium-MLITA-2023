@@ -1,9 +1,12 @@
 
+from os import listdir
 import time
 
 fNames = ["1305.08.txt","1305.11.txt","1305.12.txt","1305.13.txt","1307.1.txt","1307.4.txt","1307.7.txt","1307.8.txt","1307.13.txt","1307.15.txt","1307.16.txt","1307.23.txt","1308.2.txt","1308.3.txt","1308.5.txt","1308.10.txt","1308.11.txt","1308.21.txt","1308.14.txt","1308.17.txt","1308.26.txt","1306.10.txt","1306.12.txt","1306.16.txt","1306.22.txt","1306.23.txt"]
 DNF_str = []
 Alphabet = [True for i in range(26)]
+
+fNames = listdir("C:/Users/danii/OneDrive/Рабочий стол/JavaVScode/kolloc_python/tests")
 
 def Function_find(fname):
     start_time = start = time.perf_counter()

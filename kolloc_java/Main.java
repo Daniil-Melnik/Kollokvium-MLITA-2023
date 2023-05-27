@@ -3,21 +3,23 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.function.Function;
  
 class Main
 {
     public static void main(String[] args)
     {
-        String  fileNames[]={"1305.1.txt","1305.06.txt","1305.08.txt","1305.11.txt","1305.12.txt","1305.13.txt","1305.18.txt","1307.1.txt","1307.4.txt","1307.6.txt","1307.7.txt","1307.8.txt","1307.13.txt","1307.14.txt","1307.22.txt","1307.15.txt","1307.16.txt","1307.23.txt","1307.29.txt","1308.2.txt","1308.3.txt","1308.4.txt","1308.5.txt","1308.10.txt","1308.11.txt","1308.21.txt","1308.13.txt","1308.14.txt","1308.17.txt","1308.26.txt","1306.10.txt","1306.12.txt","1306.16.txt","1306.22.txt","1306.23.txt"};
-
-        for(int i =0; i<fileNames.length; i++){
-            Function(fileNames[i]);
+        //String  fileNames[]={"1305.1.txt","1305.06.txt","1305.08.txt","1305.11.txt","1305.12.txt","1305.13.txt","1305.18.txt","1307.1.txt","1307.4.txt","1307.6.txt","1307.7.txt","1307.8.txt","1307.13.txt","1307.14.txt","1307.22.txt","1307.15.txt","1307.16.txt","1307.23.txt","1307.29.txt","1308.2.txt","1308.3.txt","1308.4.txt","1308.5.txt","1308.10.txt","1308.11.txt","1308.21.txt","1308.13.txt","1308.14.txt","1308.17.txt","1308.26.txt","1306.10.txt","1306.12.txt","1306.16.txt","1306.22.txt","1306.23.txt"};
+        File folder = new File("C:/Users/danii/OneDrive/Рабочий стол/JavaVScode/kolloc_java/tests");
+        File[] files = folder.listFiles();
+        for(int i =0; i<files.length; i++){
+            Function(files[i].getName());
         }
+        //System.out.println();
+        //Function("1307.13.txt");
         
     }
     public static void Function(String fName){
-        File file = new File("C:/Users/danii/OneDrive/Рабочий стол/JavaVScode/kolloc/data_txt/"+fName);
+        File file = new File("C:/Users/danii/OneDrive/Рабочий стол/JavaVScode/kolloc_java/tests/"+fName);
         if (file.exists()){
             long startTime = System.nanoTime();
             int n =0;
@@ -68,10 +70,13 @@ class Main
             for (int i =0; i<n; i++){
                 String str = DNF_str.get(i);
                 int k =0;
+                //System.out.println(str);
                 while(str.charAt(k) != '_'){
-                    DNF[i] = DNF[i] | Alphabet[str.charAt(k)-'a'];
-                    //System.out.print(str.charAt(k));
-                    k++;
+                    if ((str.charAt(k)>='a') & (str.charAt(k)<='z')){
+                        DNF[i] = DNF[i] | Alphabet[str.charAt(k)-'a'];
+                        //System.out.print(str.charAt(k));
+                        k++;
+                    }
                 }
                 k++;
                 //System.out.println();
@@ -82,9 +87,9 @@ class Main
                     
                 }
             }
-            // for (int i =0; i<n; i++){
-            //     //System.out.println(i+1 + " " + DNF[i]);
-            // }
+             for (int i =0; i<n; i++){
+                 //System.out.println(i+1 + " " + DNF[i]);
+             }
             for (int i =0; i<n; i++){
                 result = result&DNF[i];
             }
